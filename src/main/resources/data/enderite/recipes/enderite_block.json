@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    },
+    {
+      "item": "enderite:enderite_ingot"
+    }
+  ],
+  "result": {
+    "item": "enderite:enderite_block",
+    "count": 1
+  }
+}

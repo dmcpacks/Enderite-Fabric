@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "enderite",
+  "version": "${version}",
+
+  "name": "Enderite",
+  "description": "Adds enderite to the game, stronger than netherite.",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "sources": "github.com/dmcpacks/Enderite-Fabric"
+  },
+
+  "license": "GNU-3.0",
+  "icon": "assets/enderite/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.dmcpacks.enderite.Enderite"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
