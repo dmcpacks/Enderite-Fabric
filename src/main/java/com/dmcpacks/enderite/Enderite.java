@@ -3,6 +3,7 @@ package com.dmcpacks.enderite;
 import com.dmcpacks.enderite.block.ModBlocks;
 import com.dmcpacks.enderite.config.ModConfigs;
 import com.dmcpacks.enderite.item.ModItems;
+import com.dmcpacks.enderite.util.ModLootTableModifiers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -42,6 +43,7 @@ public class Enderite implements ModInitializer {
 		ModConfigs.registerConfigs();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModLootTableModifiers.modifyLootTables();
 
 		//registering enderite
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE,
