@@ -1,8 +1,8 @@
 package com.dmcpacks.enderite.util;
 
 import com.dmcpacks.enderite.item.ModItems;
-import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
@@ -18,16 +18,16 @@ public class ModLootTableModifiers {
 
     public static void modifyLootTables() {
 
-        LootTableLoadingCallback.EVENT.register(((resourceManager, manager, id, supplier, setter) -> {
+        LootTableEvents.MODIFY.register(((resourceManager, manager, id, supplier, setter) -> {
             //check for leaves loot table.
             if(END_CITY_TREASURE_ID.equals(id)) {
                 // Adds enderite scrap to the end_city loot table.
-                FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.15f))
+                LootPool poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(2))
+                        .conditionally(RandomChanceLootCondition.builder(.25f))
                         .with(ItemEntry.builder(ModItems.ENDERITE_SCRAP))
-                        .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 5.0f)).build());
-                supplier.withPool(poolBuilder.build());
+                        .build();
+                supplier.pool(poolBuilder);
             }
         }));
     }
