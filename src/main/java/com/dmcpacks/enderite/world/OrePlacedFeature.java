@@ -13,16 +13,20 @@ import net.minecraft.world.gen.placementmodifier.*;
 import java.util.List;
 
 public class OrePlacedFeature {
-    public static final RegistryEntry<PlacedFeature> ORE_ENDERITE;
+    public static final RegistryEntry<PlacedFeature> ORE_ENDERITE_LARGE;
+    public static final RegistryEntry<PlacedFeature> ORE_ENDERITE_SMALL;
 
     static {
-        ORE_ENDERITE = PlacedFeatures.register("ore_enderite", OreConfiguredFeature.ORE_ENDERITE, modifiersWithCount(2, HeightRangePlacementModifier.uniform(YOffset.aboveBottom(20), YOffset.fixed(50)) ));
+        ORE_ENDERITE_LARGE = PlacedFeatures.register("ore_enderite_large", OreConfiguredFeature.ORE_ENDERITE_LARGE, modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.aboveBottom(20), YOffset.fixed(40)) ));
+        ORE_ENDERITE_SMALL = PlacedFeatures.register("ore_enderite_small", OreConfiguredFeature.ORE_ENDERITE_SMALL, modifiersWithCount(1, HeightRangePlacementModifier.uniform(YOffset.aboveBottom(20), YOffset.fixed(40)) ));
     }
 
     public static void init() {
-        RegistryKey<PlacedFeature> oreEnderite = ORE_ENDERITE.getKey().get();
+        RegistryKey<PlacedFeature> oreEnderiteLarge = ORE_ENDERITE_LARGE.getKey().get();
+        RegistryKey<PlacedFeature> oreEnderiteSmall = ORE_ENDERITE_SMALL.getKey().get();
 
-        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, oreEnderite);
+        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, oreEnderiteLarge);
+        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, oreEnderiteSmall);
     }
 
     private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {
