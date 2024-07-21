@@ -1,0 +1,17 @@
+
+/.gradle
+/.idea
+/.gradle
+/build
+/run
+/run
+/.idea
+/.gradle
+.gradle/7.3.3/checksums/md5-checksums.bin
+.gradle/7.3.3/checksums/sha1-checksums.bin
+.gradle/buildOutputCleanup/cache.properties
+.gradle/loom-cache/1.19/net.fabricmc.yarn.1_19.1.19+build.1-v2/minecraft-project-@-merged-named.jar
+.idea/discord.xml
+.idea/gradle.xml
+.idea/misc.xml
+.idea/vcs.xml
